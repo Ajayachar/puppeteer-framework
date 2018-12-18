@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#setting flags so script does not immediately exit on a failure
+set -uo pipefail
+
+BUILD=${BUILDKITE_BUILD_NUMBER:-dev}
+BASE_BRANCH=${BASE_BRANCH:-''}
+echo "running test trigger by source ${BUILDKITE_SOURCE}, base branch ${BASE_BRANCH}"
+if [[ ${BUILDKITE_SOURCE} != "trigger_job"  || ${BASE_BRANCH} == "master" ]]; then 
+    docker-compose up --exit-code-from  test 
+    exitStatus=$?
+    echo "Test exited with ${exitStatus}"
+    if [ $exitStatus -eq 0 ]; then
+        echo "test successful"
+    else 
+        echo "test failed"
+        ls -l screenShots
+        rm -f screenshots-*.zip
+        zip -r screenshots-${BUILD}.zip screenShots/.    
+        exit $exitStatus
+    fi 
+fi
+

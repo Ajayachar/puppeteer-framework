@@ -1,0 +1,56 @@
+{
+  "name": "puppateer-salesforce",
+  "version": "1.0.0",
+  "description": "Automation of Salesforce using headful chrome via Puppateer",
+  "repository": {
+    "type": "git",
+    "url": "https://git.realestate.com.au/the-money/puppateer-salesforce.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register --require @babel/polyfill testCases/e2e_MY_Depth_RookiePackage_AddDiscTextBox"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "acorn": "^6.0.4",
+    "chai": "4.2.0",
+    "dotenv": "^6.1.0",
+    "faker": "^4.1.0",
+    "find-config": "^1.0.0",
+    "hashmap": "^2.3.0",
+    "jest": "^23.6.0",
+    "jest-allure-reporter": "^1.2.3",
+    "jsforce": "^1.9.1",
+    "json-parser": "^1.1.5",
+    "lite-server": "^2.4.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "moment": "^2.22.2",
+    "node": "^11.2.0",
+    "node-rest-client": "^3.1.0",
+    "properties-reader": "0.0.16",
+    "puppeteer": "^1.11.0",
+    "react-app": "^1.1.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/register": "^7.0.0",
+    "allure-commandline": "^2.8.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.4",
+    "coffeescript": "^2.3.2",
+    "eslint": "^5.9.0",
+    "jest-puppeteer": "^3.5.0",
+    "mocha": "^5.2.0",
+    "mocha-parallel-tests": "^2.0.6-alpha.3",
+    "supertest": "^3.3.0",
+    "webpack": "^4.26.1"
+  },
+  "peerDependencies": {
+    "mocha": "*"
+  }
+}
